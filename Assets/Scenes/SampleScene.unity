@@ -310,7 +310,7 @@ MonoBehaviour:
   - {fileID: 114543025975328436, guid: 03c6a147448a3ef40b056e9540816ee0, type: 2}
   mainLight: {fileID: 170076734}
   lightChangingSpeed: 0.022
-  switchingTime: 20
+  switchingTime: 10
   currentStageIndex: 0
 --- !u!1 &496640633
 GameObject:
@@ -916,6 +916,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &973483881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114480743970875884, guid: fadf157833d68904a89e3c3118463962,
+    type: 2}
+  m_PrefabInternal: {fileID: 1684831515}
+  m_Script: {fileID: 11500000, guid: 06057f2e7bc5ee644a7723951531b2a8, type: 3}
 --- !u!1001 &1684831515
 Prefab:
   m_ObjectHideFlags: 0
@@ -1087,11 +1093,11 @@ RectTransform:
   m_Father: {fileID: 2095499604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24, y: -14}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 400, y: 60}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1821904731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,6 +1181,7 @@ MonoBehaviour:
   powerupSpawnRate: 5
   powerups:
   - {fileID: 114092509533208228, guid: d338a608da248ea46b747e2271f460ed, type: 2}
+  - {fileID: 114504711326139926, guid: 817c082ea3401904d81db3a58b7a173d, type: 2}
 --- !u!1 &1864660503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,13 +1225,14 @@ MonoBehaviour:
   gameOverText: {fileID: 964019804}
   scoreText: {fileID: 1821904731}
   distanceSlider: {fileID: 2098798563}
-  nigel: {fileID: 1868891229}
-  lizzy: {fileID: 973483878}
+  nigel: {fileID: 1868891230}
+  lizzy: {fileID: 973483881}
   spawnableObjects:
   - {fileID: 114239722618693232, guid: cc111be1612a1d841b13cae42124fb71, type: 2}
   - {fileID: 114309401959311438, guid: 7e207127d4b0f9c45b3c71ae63e9d693, type: 2}
   - {fileID: 114653560609027798, guid: 30d9ab02ab1d7b346a46928c79f90a98, type: 2}
   - {fileID: 114938325863117230, guid: 9e1a0375aedf93e47b9ad354ae05fa75, type: 2}
+  - {fileID: 114690743715744266, guid: 32613a73dccb0cf4dbb5d99c4585fbb2, type: 2}
   obstacleSpawnRate: 1
   startingSpeed: 7
   targetSpeed: 0
@@ -1396,11 +1404,11 @@ RectTransform:
   m_Father: {fileID: 2095499604}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28, y: -26}
-  m_SizeDelta: {x: 184.7, y: 20}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -36}
+  m_SizeDelta: {x: 184.70001, y: 20}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2098798563
 MonoBehaviour:
   m_ObjectHideFlags: 0

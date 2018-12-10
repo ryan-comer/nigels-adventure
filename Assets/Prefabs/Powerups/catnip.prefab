@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4407003131027752}
   - component: {fileID: 33675425715827134}
   - component: {fileID: 23578997485640384}
-  - component: {fileID: 95539659883828726}
   - component: {fileID: 114108486498992276}
   - component: {fileID: 65923602013538946}
   - component: {fileID: 54668208984304210}
   - component: {fileID: 114567988593196738}
   - component: {fileID: 114836648666288156}
   - component: {fileID: 114092509533208228}
+  - component: {fileID: 114558289559314060}
   m_Layer: 0
   m_Name: catnip
   m_TagString: powerup
@@ -117,24 +117,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1928568, y: 0.060933217, z: 0.43183294}
   m_Center: {x: 0, y: 0.00006600005, z: 0.056173526}
---- !u!95 &95539659883828726
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1900689975769582}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fc480416d4385ca4a8ea18cce926a278, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114092509533208228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +131,7 @@ MonoBehaviour:
   spawnChance: 0
   spawnableLocation: {x: -2.4, y: 2.4}
   spawnHeight: 0.5
+  activeLevelIndices: 
 --- !u!114 &114108486498992276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,8 +143,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4aaf89176146d24f9369e4f5a7ddcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 120
   boostSpeed: 10
+  duration: 10
+--- !u!114 &114558289559314060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900689975769582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8b96c0c206ba140919070ec0fcab58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 160
 --- !u!114 &114567988593196738
 MonoBehaviour:
   m_ObjectHideFlags: 1

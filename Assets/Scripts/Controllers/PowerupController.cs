@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Manage the powerups here (central place) so refreshing the powerup works
+// TODO: Getting a powerup should register a cancel function under a powerup ID
+// TODO: Have a timer for each powerup
+
 public class PowerupController : MonoBehaviour {
 
 	public float powerupSpawnRate;	// The rate at which to spawn powerups

@@ -11,8 +11,8 @@ public class GameController : MonoBehaviour {
 	public Text scoreText;
 	public Slider distanceSlider;
 
-	public GameObject nigel;
-	public GameObject lizzy;
+	public Nigel nigel;
+	public Lizzy lizzy;
 
 	public SpawnableObject[] spawnableObjects;
 
