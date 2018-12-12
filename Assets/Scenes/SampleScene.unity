@@ -1492,11 +1492,12 @@ MonoBehaviour:
   nigel: {fileID: 1868891230}
   lizzy: {fileID: 973483881}
   spawnableObjects:
-  - {fileID: 114239722618693232, guid: cc111be1612a1d841b13cae42124fb71, type: 2}
   - {fileID: 114309401959311438, guid: 7e207127d4b0f9c45b3c71ae63e9d693, type: 2}
+  - {fileID: 114953556273581606, guid: 63f424a0b17ba00488bdb48a120d04b4, type: 2}
   - {fileID: 114653560609027798, guid: 30d9ab02ab1d7b346a46928c79f90a98, type: 2}
   - {fileID: 114938325863117230, guid: 9e1a0375aedf93e47b9ad354ae05fa75, type: 2}
-  - {fileID: 114690743715744266, guid: 32613a73dccb0cf4dbb5d99c4585fbb2, type: 2}
+  - {fileID: 114953556273581606, guid: 63f424a0b17ba00488bdb48a120d04b4, type: 2}
+  - {fileID: 114239722618693232, guid: cc111be1612a1d841b13cae42124fb71, type: 2}
   obstacleSpawnRate: 1
   startingSpeed: 7
   targetSpeed: 0
@@ -1525,6 +1526,7 @@ MonoBehaviour:
   startingGravity: -9.81
   jumpHeight: 5
   gravity: -9.81
+  doubleJump: 0
   isCatnipOn: 0
 --- !u!65 &1868891231
 BoxCollider:

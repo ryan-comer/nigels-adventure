@@ -14,10 +14,14 @@ public class Nigel : MonoBehaviour {
 	public float startingGravity = -9.81f;
 	[HideInInspector]
 	public float jumpHeight, gravity;
+	public bool doubleJump = true;	// Used for the double jump modifier
 
 	public bool isCatnipOn = false;	// Is the catnip powerup activated
 
-	private bool isJumping = false;
+	// 0 - No jump
+	// 1 - One jump
+	// 2 - Two jumps (for double jumping)
+	private int jumping = 0;
 	private float deltaY = 0.0f;	// How much to change Nigel's Y every frame
 
 	private float lastY;	// Used to see if you're falling
@@ -44,11 +48,11 @@ public class Nigel : MonoBehaviour {
 	private void getInput(){
 		float moveX = Input.GetAxis("Horizontal");
 
-		if(Input.GetKeyDown(KeyCode.Space) && !isJumping){
+		if(Input.GetKeyDown(KeyCode.Space)){
 			jump();
 		}
 		
-		if(!isJumping){
+		if(jumping == 0){
 			moveNigel(moveX);
 		}
 
@@ -72,13 +76,15 @@ public class Nigel : MonoBehaviour {
 
 	// Make nigel jump
 	private void jump(){
-		// Only jump if in the running state
-		if(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Run"){
-			return;
+		if((jumping == 1 && !doubleJump) || (jumping == 2 && doubleJump)){
+			return;	// Already jumped
 		}
 
+		// Force the running animation
+		anim.Play("Run");
+
 		deltaY = jumpHeight;
-		isJumping = true;
+		jumping += 1;
 		jumped = true;
 
 		// Trigger the animation
@@ -94,7 +100,7 @@ public class Nigel : MonoBehaviour {
 		// Grounded
 		if(newY < 0){
 			newY = 0;
-			isJumping = false;
+			jumping = 0;
 			deltaY = 0;
 
 			// Trigger the animation
