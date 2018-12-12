@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointsOnCollision : MonoBehaviour {
+public class PointsMissed : MonoBehaviour {
 
-	public int pointsToAdd = 10;
+	public string pointsTag;
 
 	// Use this for initialization
 	void Start () {
@@ -17,8 +17,9 @@ public class PointsOnCollision : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.GetComponent<Nigel>() != null){
-			PointsController.instance.AddPoints(pointsToAdd);
+		// Check if points
+		if(collider.gameObject.tag == pointsTag){
+			PointsController.instance.PointMissed();
 		}
 	}
 

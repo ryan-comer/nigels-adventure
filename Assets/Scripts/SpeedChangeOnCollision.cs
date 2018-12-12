@@ -19,6 +19,11 @@ public class SpeedChangeOnCollision : MonoBehaviour {
 
 	void OnTriggerExit(Collider collider){
 		if(collider.gameObject.GetComponent<Nigel>() != null){
+			// Check for catnip
+			if(collider.gameObject.GetComponent<Nigel>().isCatnipOn){
+				return;
+			}
+
 			GameController.instance.AddSpeed(speedToAdd);
 			GameController.instance.AddLizzyDistance(lizzyDistanceChange);
 		}

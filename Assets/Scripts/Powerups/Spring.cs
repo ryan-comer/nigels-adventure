@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Powerup))]
 public class Spring : MonoBehaviour {
 
 	public float newJumpHeight;
 	public float newGravity;
-	public float duration;
-
 	private float oldGravity, oldJumpHeight;
+
+	private Powerup powerup;
 
 	// Use this for initialization
 	void Start () {
 		transform.rotation = Quaternion.Euler(45, 0, 45);
-		oldGravity = GameController.instance.nigel.gravity;
-		oldJumpHeight = GameController.instance.nigel.jumpHeight;
+		oldGravity = GameController.instance.nigel.startingGravity;
+		oldJumpHeight = GameController.instance.nigel.startingJumpHeight;
+
+		// Set the cancel delegate
+		powerup = GetComponent<Powerup>();
+		powerup.Cancel = cancel;
 	}
 	
 	// Update is called once per frame
@@ -27,20 +32,19 @@ public class Spring : MonoBehaviour {
 		if(collider.gameObject.GetComponent<Nigel>() != null){
 			Nigel nigel = GameController.instance.nigel;
 			
-			oldJumpHeight = nigel.jumpHeight;
-			oldGravity = nigel.gravity;
+			oldJumpHeight = nigel.startingJumpHeight;
+			oldGravity = nigel.startingGravity;
 
 			nigel.jumpHeight = newJumpHeight;
 			nigel.gravity = newGravity;
 
 			transform.position = new Vector3(1000, 1000, 1000);
-			StartCoroutine(cancel());
+
+			PowerupController.instance.RegisterPowerup(powerup);
 		}
 	}
 
-	private IEnumerator cancel(){
-		yield return new WaitForSeconds(duration);
-
+	private void cancel(){
 		// Cancel the powerup
 		Nigel nigel = GameController.instance.nigel;
 

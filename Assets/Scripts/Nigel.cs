@@ -10,8 +10,12 @@ public class Nigel : MonoBehaviour {
 	public float rightXBound;
 
 	public float horizontalSpeed = 5.0f;
-	public float jumpHeight = 5.0f;
-	public float gravity = -9.81f;
+	public float startingJumpHeight = 5.0f;
+	public float startingGravity = -9.81f;
+	[HideInInspector]
+	public float jumpHeight, gravity;
+
+	public bool isCatnipOn = false;	// Is the catnip powerup activated
 
 	private bool isJumping = false;
 	private float deltaY = 0.0f;	// How much to change Nigel's Y every frame
@@ -23,6 +27,9 @@ public class Nigel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		jumpHeight = startingJumpHeight;
+		gravity = startingGravity;
+
 		anim = GetComponent<Animator>();
 		Debug.Assert(anim);
 		lastY = transform.position.y;

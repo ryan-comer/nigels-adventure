@@ -9,6 +9,7 @@ TagManager:
   - connection_point
   - powerup
   - nigel
+  - points
   layers:
   - Default
   - TransparentFX

@@ -5,12 +5,6 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-
-	// UI Components
-	public Text gameOverText;
-	public Text scoreText;
-	public Slider distanceSlider;
-
 	public Nigel nigel;
 	public Lizzy lizzy;
 
@@ -38,8 +32,6 @@ public class GameController : MonoBehaviour {
 
 	public static GameController instance;	// Singleton
 
-	private int currentScore = 0;
-
 	private float m_currentSpeed;
 	
 	private float sliderStartingDistance;	// Distance that Lizzy starts from Nigel (this is slider value 0)
@@ -53,9 +45,6 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameOverText.gameObject.SetActive(false);
-		ChangeScore(0);
-
 		m_currentSpeed = startingSpeed;
 		targetSpeed = startingSpeed;
 
@@ -126,17 +115,6 @@ public class GameController : MonoBehaviour {
 		return new Vector3(Random.Range(spawnableObject.spawnableLocation.x, spawnableObject.spawnableLocation.y), spawnableObject.spawnHeight, spawnLocation.position.z);
 	}
 
-	// Add points to the score
-	public void AddPoints(int points){
-		ChangeScore(currentScore + points);
-	}
-
-	// Update the current score text
-	public void ChangeScore(int newScore){
-		currentScore = newScore;
-		scoreText.text = "Score: " + currentScore.ToString();
-	}
-
 	public void AddSpeed(float speed){
 		SetSpeed(m_currentSpeed + speed);
 	}
@@ -153,7 +131,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver(){
-		gameOverText.gameObject.SetActive(true);
+		UIController.instance.ShowGameOver();
 		targetSpeed = 0;
 		m_currentSpeed = 0;
 		onSpeedChanged(0);
@@ -172,7 +150,7 @@ public class GameController : MonoBehaviour {
 		distance = Mathf.Abs(distance);
 
 		sliderStartingDistance = distance;
-		distanceSlider.value = 0;
+		UIController.instance.ChangeLizzyDistanceSlider(0);
 	}
 
 	// Create the dictionary of spawnable objects
@@ -201,7 +179,8 @@ public class GameController : MonoBehaviour {
 		distance = Mathf.Abs(distance);
 
 		// Update the slider value
-		distanceSlider.value = Mathf.Clamp(1 - (distance/sliderStartingDistance), 0f, 1.0f);
+		float newValue = Mathf.Clamp(1 - (distance/sliderStartingDistance), 0f, 1.0f);
+		UIController.instance.ChangeLizzyDistanceSlider(newValue);
 	}
 
 }
