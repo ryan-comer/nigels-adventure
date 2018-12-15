@@ -9,7 +9,9 @@ public class Nigel : MonoBehaviour {
 	public float leftXBound;
 	public float rightXBound;
 
+	[HideInInspector]
 	public float horizontalSpeed = 5.0f;
+	public float startingHorizontalSpeed;
 	public float startingJumpHeight = 5.0f;
 	public float startingGravity = -9.81f;
 	[HideInInspector]
@@ -31,6 +33,7 @@ public class Nigel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		horizontalSpeed = startingHorizontalSpeed;
 		jumpHeight = startingJumpHeight;
 		gravity = startingGravity;
 

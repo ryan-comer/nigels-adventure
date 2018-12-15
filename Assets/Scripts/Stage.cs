@@ -6,6 +6,7 @@ public class Stage : MonoBehaviour {
 
 	public float zValueToSendStageCreateCommand;
 	public float lightIntensity;	// Light intensity for this stage
+	public string stageID;
 
 	private bool alreadySpawned = false;
 

@@ -161,7 +161,8 @@ MonoBehaviour:
   spawnChance: 0.6
   spawnableLocation: {x: -2.25, y: 2.2}
   spawnHeight: 0.465
-  activeLevelIndices: 00000000
+  activeLevels:
+  - urban
 --- !u!114 &114548204081334906
 MonoBehaviour:
   m_ObjectHideFlags: 1

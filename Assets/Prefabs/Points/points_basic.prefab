@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114675071987329872}
   - component: {fileID: 54061866485489910}
   - component: {fileID: 114239722618693232}
+  - component: {fileID: 108072196558567942}
   m_Layer: 0
   m_Name: points_basic
   m_TagString: points
@@ -42,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1268099800448600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.302, y: 3.22929, z: 7.0315723}
+  m_LocalPosition: {x: -0.7348879, y: 0.817, z: -8.692}
   m_LocalScale: {x: 0.18845, y: 0.18845, z: 0.18845}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,6 +106,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!108 &108072196558567942
+Light:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268099800448600}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0.71657264, b: 0, a: 1}
+  m_Intensity: 1.2
+  m_Range: 3.69
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114200307978104778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +169,9 @@ MonoBehaviour:
   spawnChance: 0.8
   spawnableLocation: {x: -2.4, y: 2.3}
   spawnHeight: 0.5
-  activeLevelIndices: 0000000001000000
+  activeLevels:
+  - urban
+  - snowy
 --- !u!114 &114460106523948112
 MonoBehaviour:
   m_ObjectHideFlags: 1

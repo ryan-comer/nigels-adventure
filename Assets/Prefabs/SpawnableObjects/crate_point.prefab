@@ -79,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1674293988406568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.438, z: 0}
+  m_LocalPosition: {x: 0, y: 1.874, z: 0}
   m_LocalScale: {x: 0.18845, y: 0.18845, z: 0.18845}
   m_Children: []
   m_Father: {fileID: 4945776960613804}
@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1117324478625710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: 0, z: 0}
+  m_LocalPosition: {x: -0.42914975, y: 3.22929, z: 7.400142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4998581229580240}
@@ -344,7 +344,8 @@ MonoBehaviour:
   spawnChance: 0.518
   spawnableLocation: {x: -2.2, y: 2.2}
   spawnHeight: 0
-  activeLevelIndices: 00000000
+  activeLevels:
+  - urban
 --- !u!135 &135300208734368892
 SphereCollider:
   m_ObjectHideFlags: 1

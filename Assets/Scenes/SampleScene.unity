@@ -385,7 +385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
-  - {fileID: 114198885064001624, guid: 4eef667a13796d443be1744e497cc72c, type: 2}
   - {fileID: 114543025975328436, guid: 03c6a147448a3ef40b056e9540816ee0, type: 2}
   mainLight: {fileID: 170076734}
   lightChangingSpeed: 0.022
@@ -1498,8 +1497,15 @@ MonoBehaviour:
   - {fileID: 114938325863117230, guid: 9e1a0375aedf93e47b9ad354ae05fa75, type: 2}
   - {fileID: 114953556273581606, guid: 63f424a0b17ba00488bdb48a120d04b4, type: 2}
   - {fileID: 114239722618693232, guid: cc111be1612a1d841b13cae42124fb71, type: 2}
+  - {fileID: 114239722618693232, guid: bf869cc379f20f942ab092875e9ce84d, type: 2}
+  - {fileID: 114856187275449974, guid: 66e6b5b3327eff04abbef66b3e0bac92, type: 2}
+  - {fileID: 114046023568289584, guid: a1bc711ccbd5edf4583036b9f1e66896, type: 2}
+  - {fileID: 114827695928461884, guid: 122a2d2239b519649913b85a53b75621, type: 2}
+  - {fileID: 114922458215176222, guid: 170b97f2566cd424e8890a9111250b30, type: 2}
+  - {fileID: 114491999561987530, guid: 32613a73dccb0cf4dbb5d99c4585fbb2, type: 2}
+  - {fileID: 114231570289751652, guid: 860870bc01797b84ca0be6b9207b08f0, type: 2}
   obstacleSpawnRate: 1
-  startingSpeed: 7
+  startingSpeed: 10
   targetSpeed: 0
   speedEqualizeFactor: 0.026
   spawnLocation: {fileID: 75913198}
@@ -1522,6 +1528,7 @@ MonoBehaviour:
   leftXBound: -3.5
   rightXBound: 3.4
   horizontalSpeed: 5
+  startingHorizontalSpeed: 5
   startingJumpHeight: 5
   startingGravity: -9.81
   jumpHeight: 5

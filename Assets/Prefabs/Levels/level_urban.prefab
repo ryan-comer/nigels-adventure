@@ -346,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zValueToSendStageCreateCommand: 30
   lightIntensity: 1
+  stageID: urban
 --- !u!114 &114464154738650766
 MonoBehaviour:
   m_ObjectHideFlags: 1

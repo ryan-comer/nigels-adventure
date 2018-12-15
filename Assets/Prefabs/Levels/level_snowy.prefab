@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zValueToSendStageCreateCommand: 30
   lightIntensity: 0.7
+  stageID: snowy
 --- !u!114 &114582386017237520
 MonoBehaviour:
   m_ObjectHideFlags: 1

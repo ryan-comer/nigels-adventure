@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour {
 	
 	private float sliderStartingDistance;	// Distance that Lizzy starts from Nigel (this is slider value 0)
 	private SpawnableObject powerupToSpawn;	// Spawn this powerups this tick
-	private Dictionary<int, List<SpawnableObject>> spawnableObjectsDict;
+	private Dictionary<string, List<SpawnableObject>> spawnableObjectsDict;
 
 
 	void Awake(){
@@ -76,7 +76,8 @@ public class GameController : MonoBehaviour {
 			}else{
 				// Create the obstacle
 				SpawnableObject spawnableObject = getRandomObject();
-				GameObject.Instantiate(spawnableObject, getObjectSpawnLocation(spawnableObject), Quaternion.identity);
+				var obj = GameObject.Instantiate(spawnableObject, getObjectSpawnLocation(spawnableObject), Quaternion.identity);
+				obj.transform.Rotate(Vector3.up, 180);	// Turn the object around
 			}
 
 			yield return new WaitForSeconds(obstacleSpawnRate);
@@ -86,7 +87,13 @@ public class GameController : MonoBehaviour {
 	// Get a random obstacle from the known list of obstacles
 	private SpawnableObject getRandomObject(){
 		// Get the proper list
-		SpawnableObject[] possibleObjects = spawnableObjectsDict[StageController.instance.currentStageIndex].ToArray();
+		SpawnableObject[] possibleObjects = spawnableObjectsDict[StageController.instance.stages[StageController.instance.currentStageIndex].stageID].ToArray();
+		
+		foreach(SpawnableObject so in possibleObjects){
+			Debug.Log(so);
+		}
+
+
 		float currentWeight = 0;
 		float[] itemNumbers = new float[possibleObjects.Length];
 
@@ -158,15 +165,19 @@ public class GameController : MonoBehaviour {
 	private void initializeSpawnableObjectsDict(){
 		StageController sc = StageController.instance;
 
-		spawnableObjectsDict = new Dictionary<int, List<SpawnableObject>>();
+		spawnableObjectsDict = new Dictionary<string, List<SpawnableObject>>();
 		for(int levelNumber = 0; levelNumber < sc.stages.Length; levelNumber++){
-			spawnableObjectsDict.Add(levelNumber, new List<SpawnableObject>());
+			spawnableObjectsDict.Add(sc.stages[levelNumber].stageID, new List<SpawnableObject>());
 		}
 
 		// Go through the spawnable objects and add to the proper dictionary lists
 		foreach(SpawnableObject so in spawnableObjects){
-			foreach(int levelIndex in so.activeLevelIndices){
-				spawnableObjectsDict[levelIndex].Add(so);
+			foreach(string levelID in so.activeLevels){
+				// Stage isn't loaded, can't add this object
+				if(!spawnableObjectsDict.ContainsKey(levelID)){
+					continue;
+				}
+				spawnableObjectsDict[levelID].Add(so);
 			}
 		}
 	}

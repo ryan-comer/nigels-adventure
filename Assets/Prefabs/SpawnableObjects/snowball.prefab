@@ -188,7 +188,8 @@ MonoBehaviour:
   spawnChance: 0.5
   spawnableLocation: {x: -2.1, y: 2.1}
   spawnHeight: 0.5
-  activeLevelIndices: 01000000
+  activeLevels:
+  - snowy
 --- !u!135 &135049097878405712
 SphereCollider:
   m_ObjectHideFlags: 1

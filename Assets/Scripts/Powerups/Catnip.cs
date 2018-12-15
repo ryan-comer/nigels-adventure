@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Powerup))]
 public class Catnip : MonoBehaviour {
 
-	public float boostSpeed;
-	private float oldSpeed;
+	public float boostHorizontalSpeed;
+	private float oldHorizontalSpeed;
 	private Powerup powerup;
 
 	// Use this for initialization
 	void Start () {
 		transform.rotation = Quaternion.Euler(-45, 0, 45);
-		oldSpeed = GameController.instance.startingSpeed;
+		oldHorizontalSpeed = GameController.instance.nigel.startingHorizontalSpeed;
 
 		// Setup the cancel delegate
 		powerup = GetComponent<Powerup>();
@@ -27,8 +27,9 @@ public class Catnip : MonoBehaviour {
 	void OnTriggerEnter(Collider collider){
 		// Hit Nigel - do the powerup
 		if(collider.gameObject.GetComponent<Nigel>() != null){
-			GameController.instance.targetSpeed = boostSpeed;
-			collider.gameObject.GetComponent<Nigel>().isCatnipOn = true;
+			Nigel nigel = collider.gameObject.GetComponent<Nigel>();
+			nigel.isCatnipOn = true;
+			nigel.horizontalSpeed = boostHorizontalSpeed;
 
 			transform.position = Vector3.one * 1000;
 
@@ -38,8 +39,7 @@ public class Catnip : MonoBehaviour {
 	}
 
 	private void cancel(){
-
-		GameController.instance.targetSpeed = oldSpeed;
+		GameController.instance.nigel.horizontalSpeed = oldHorizontalSpeed;
 		GameController.instance.nigel.isCatnipOn = false;
 		Destroy(gameObject);
 	}
