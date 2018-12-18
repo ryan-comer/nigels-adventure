@@ -24,6 +24,7 @@ public class SpeedChangeOnCollision : MonoBehaviour {
 				return;
 			}
 
+			Debug.Log("Hit");
 			GameController.instance.AddSpeed(speedToAdd);
 			GameController.instance.AddLizzyDistance(lizzyDistanceChange);
 		}

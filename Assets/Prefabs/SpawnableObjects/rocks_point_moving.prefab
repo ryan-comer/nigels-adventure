@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 114718719207122326}
   - component: {fileID: 114796698737691362}
   - component: {fileID: 114827695928461884}
+  - component: {fileID: 65855740048332198}
   m_Layer: 0
   m_Name: rocks_point_moving
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,6 +751,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3016081, y: 1.5582986, z: 1.6096368}
   m_Center: {x: 3.121983, y: 0.77969384, z: -0.04812932}
+--- !u!65 &65855740048332198
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045531714398906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95113923209185950
 Animator:
   serializedVersion: 3
@@ -828,8 +841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e61a5dc4a623646ab2954f434e91e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.7
-  changeDirectionX: {x: -2.5, y: 2.5}
+  moveSpeed: 1.3
+  changeDirectionX: {x: -1.6, y: 2}
 --- !u!114 &114510687063843542
 MonoBehaviour:
   m_ObjectHideFlags: 1

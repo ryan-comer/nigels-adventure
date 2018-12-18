@@ -89,11 +89,6 @@ public class GameController : MonoBehaviour {
 		// Get the proper list
 		SpawnableObject[] possibleObjects = spawnableObjectsDict[StageController.instance.stages[StageController.instance.currentStageIndex].stageID].ToArray();
 		
-		foreach(SpawnableObject so in possibleObjects){
-			Debug.Log(so);
-		}
-
-
 		float currentWeight = 0;
 		float[] itemNumbers = new float[possibleObjects.Length];
 

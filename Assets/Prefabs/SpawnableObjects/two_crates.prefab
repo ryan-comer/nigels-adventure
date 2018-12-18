@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 114920989102146336}
   - component: {fileID: 114302815174888046}
   - component: {fileID: 114922458215176222}
+  - component: {fileID: 65286327173858732}
   m_Layer: 0
   m_Name: two_crates
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,6 +250,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.917097, y: 0.917097, z: 0.917097}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65286327173858732
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317806585145908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95154206830985016
 Animator:

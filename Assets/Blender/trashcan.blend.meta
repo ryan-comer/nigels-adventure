@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: dac02e6b0138da74ca80088ba1394508
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: trashcan
+    100004: trashcan_001
+    100006: trashcan_002
+    100008: handle
+    100010: lid
+    100012: Bone
+    100014: Bone_001
+    100016: Bone_002
+    100018: trashcan_armature
+    100020: trash_bag
+    100022: Bone_003
+    100024: Bone_004
+    100026: Bone_005
+    100028: trash_bag_001
+    100030: trash_bag_002
+    100032: trash_1
+    100034: trash_2
+    100036: trash_3
+    100038: trashcan_0
+    400000: //RootNode
+    400002: trashcan
+    400004: trashcan_001
+    400006: trashcan_002
+    400008: handle
+    400010: lid
+    400012: Bone
+    400014: Bone_001
+    400016: Bone_002
+    400018: trashcan_armature
+    400020: trash_bag
+    400022: Bone_003
+    400024: Bone_004
+    400026: Bone_005
+    400028: trash_bag_001
+    400030: trash_bag_002
+    400032: trash_1
+    400034: trash_2
+    400036: trash_3
+    400038: trashcan_0
+    2100000: unnamed
+    2100002: None__trashcan_diffuse
+    2100004: None__trash_bag_diffuse
+    2300000: trashcan
+    2300002: trashcan_001
+    2300004: trashcan_002
+    2300006: handle
+    2300008: lid
+    2300010: //RootNode
+    2300012: trash_bag
+    3300000: trashcan
+    3300002: trashcan_001
+    3300004: trashcan_002
+    3300006: handle
+    3300008: lid
+    3300010: //RootNode
+    3300012: trash_bag
+    4300000: trashcan_002
+    4300002: trashcan_001
+    4300004: trashcan
+    4300006: handle
+    4300008: lid
+    4300010: trash_bag
+    4300012: trash_bag_002
+    4300014: trash_bag_001
+    7400000: Default Take
+    7400002: trashcan_armatureAction
+    7400004: spin
+    7400006: trashcan_fall
+    7400008: trashcan_fallen
+    9500000: //RootNode
+    13700000: trashcan
+    13700002: trash_bag
+    13700004: trash_bag_001
+    13700006: trash_bag_002
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: spin
+      takeName: spin
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: trashcan_fall
+      takeName: trashcan_fall
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: trashcan_fallen
+      takeName: trashcan_fallen
+      firstFrame: 0
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.37
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.37
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

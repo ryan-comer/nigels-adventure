@@ -31,7 +31,7 @@ GameObject:
   - component: {fileID: 114475787402342816}
   m_Layer: 0
   m_Name: spring
-  m_TagString: Untagged
+  m_TagString: powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d28c9788a409104ca7b89fd15e4b9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newJumpHeight: 5.5
-  newGravity: -7
 --- !u!114 &114223680726477286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,4 +192,4 @@ MonoBehaviour:
   spawnChance: 0.5
   spawnableLocation: {x: -2.4, y: 2.4}
   spawnHeight: 0.398
-  activeLevelIndices: 
+  activeLevels: []
