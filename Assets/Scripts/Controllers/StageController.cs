@@ -24,6 +24,9 @@ public class StageController : MonoBehaviour {
 	void Start () {
 		currentStageIndex = 0;
 
+		// Initial light intensity
+		StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
+
 		StartCoroutine(switchStages());
 	}
 	
