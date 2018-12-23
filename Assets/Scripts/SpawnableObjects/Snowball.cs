@@ -24,8 +24,10 @@ public class Snowball : MonoBehaviour {
 
 	// See if you need to change directions
 	private void checkDirection(){
-		if(transform.position.x > changeDirectionX.y || transform.position.x < changeDirectionX.x){
-			moveDirection *= -1;
+		if(transform.position.x > changeDirectionX.y){
+			moveDirection = -1;
+		}else if(transform.position.x < changeDirectionX.x){
+			moveDirection = 1;
 		}
 	}
 

@@ -27,6 +27,9 @@ public class StageController : MonoBehaviour {
 		// Initial light intensity
 		StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
 
+		// Initial skybox
+		changeSkybox(stages[currentStageIndex].skybox);
+
 		StartCoroutine(switchStages());
 	}
 	
@@ -41,6 +44,7 @@ public class StageController : MonoBehaviour {
 			yield return new WaitForSeconds(switchingTime);
 
 			currentStageIndex = (currentStageIndex + 1) % stages.Length;	// Go to the next stage
+			changeSkybox(stages[currentStageIndex].skybox);
 			StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
 		}
 	}
@@ -72,6 +76,11 @@ public class StageController : MonoBehaviour {
 		}
 
 		Instantiate(stages[currentStageIndex], connectionPoint, Quaternion.identity);
+	}
+
+	// Change the skybox for the level
+	private void changeSkybox(Material newSkybox){
+		RenderSettings.skybox = newSkybox;
 	}
 
 }

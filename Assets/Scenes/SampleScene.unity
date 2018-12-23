@@ -215,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75913197}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.34759244, z: 27.8}
+  m_LocalPosition: {x: 0, y: 0.34759244, z: 70.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
-  - {fileID: 114543025975328436, guid: 03c6a147448a3ef40b056e9540816ee0, type: 3}
+  - {fileID: 1867705772545541553, guid: 0828f1f08b8aa154b80e3f2d095d6a6c, type: 3}
   mainLight: {fileID: 170076734}
   lightChangingSpeed: 0.022
   switchingTime: 20
@@ -1568,9 +1568,21 @@ MonoBehaviour:
   nigel: {fileID: 1868891230}
   lizzy: {fileID: 973483881}
   spawnableObjects:
+  - {fileID: 114856187275449974, guid: 66e6b5b3327eff04abbef66b3e0bac92, type: 3}
+  - {fileID: 114046023568289584, guid: a1bc711ccbd5edf4583036b9f1e66896, type: 3}
+  - {fileID: 114309401959311438, guid: 7e207127d4b0f9c45b3c71ae63e9d693, type: 3}
+  - {fileID: 114953556273581606, guid: 63f424a0b17ba00488bdb48a120d04b4, type: 3}
+  - {fileID: 114601428384562828, guid: b76be40244f3dbb4291b043229fe4b1a, type: 3}
   - {fileID: 2840513253884699258, guid: 489d7ba8a96190647a0a0bee18b02f32, type: 3}
+  - {fileID: 114653560609027798, guid: 30d9ab02ab1d7b346a46928c79f90a98, type: 3}
+  - {fileID: 114827695928461884, guid: 122a2d2239b519649913b85a53b75621, type: 3}
+  - {fileID: 114938325863117230, guid: 9e1a0375aedf93e47b9ad354ae05fa75, type: 3}
+  - {fileID: 114231570289751652, guid: 860870bc01797b84ca0be6b9207b08f0, type: 3}
+  - {fileID: 114097667950502320, guid: 52549d8a6c470a24ea1b3669fda1d227, type: 3}
+  - {fileID: 114922458215176222, guid: 170b97f2566cd424e8890a9111250b30, type: 3}
   obstacleSpawnRate: 1.3
-  startingSpeed: 10
+  spawnObjectsEnabled: 0
+  startingSpeed: 7
   targetSpeed: 0
   speedEqualizeFactor: 0.026
   spawnLocation: {fileID: 75913198}

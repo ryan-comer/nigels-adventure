@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
 
 	public float obstacleSpawnRate = 1;
 
+	public bool spawnObjectsEnabled;	// Turn off for debugging
+
 	// Speed stuff for Nigel
 	public float startingSpeed = 5.0f;
 	public float targetSpeed;	// The speed at which to equalize to
@@ -73,7 +75,7 @@ public class GameController : MonoBehaviour {
 			if(powerupToSpawn != null){
 				GameObject.Instantiate(powerupToSpawn, getObjectSpawnLocation(powerupToSpawn), Quaternion.identity);
 				powerupToSpawn = null;
-			}else{
+			}else if(spawnObjectsEnabled){
 				// Create the obstacle
 				SpawnableObject spawnableObject = getRandomObject();
 				var obj = GameObject.Instantiate(spawnableObject, getObjectSpawnLocation(spawnableObject), Quaternion.identity);
