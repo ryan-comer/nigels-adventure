@@ -16,6 +16,8 @@ public class StageController : MonoBehaviour {
 
 	public static StageController instance;	// Singleton
 
+	private float currentLerpTerm = 0;
+
 	void Awake(){
 		instance = this;	// Assign to singleton
 	}
