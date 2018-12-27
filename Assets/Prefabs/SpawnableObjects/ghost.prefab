@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb42a9865b5d10840947cfad0bc96a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 0
+  spawnChance: 0.5
   spawnableLocation: {x: -2, y: 2}
   spawnHeight: 0
   activeLevels:

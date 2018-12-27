@@ -125,8 +125,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22453856, y: 0.42627943, z: 0.2287035}
-  m_Center: {x: -0.00000011920929, y: 0.21490902, z: 0}
+  m_Size: {x: 0.37630242, y: 0.65103334, z: 0.34418774}
+  m_Center: {x: -0.0039938986, y: 0.32728598, z: -0.004441738}
 --- !u!114 &1660766039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb42a9865b5d10840947cfad0bc96a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 1
-  spawnableLocation: {x: -2.3, y: 0.7}
+  spawnChance: 0.5
+  spawnableLocation: {x: -2.3, y: 0.5}
   spawnHeight: 0
   activeLevels:
   - haunted
@@ -201,8 +201,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5394794, y: 0.19716741, z: 0.20759389}
-  m_Center: {x: -0.07142889, y: -0.0052132197, z: 0.000000008514986}
+  m_Size: {x: 0.7374675, y: 0.361052, z: 0.3491306}
+  m_Center: {x: -0.41005012, y: 0.0022360333, z: 0.0037246235}
 --- !u!65 &1660766037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -214,8 +214,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34223357, y: 1.3228437, z: 1.2021207}
-  m_Center: {x: -0.8065345, y: 0.05175024, z: 0.042812437}
+  m_Size: {x: 0.72781056, y: 1.8219471, z: 2.2077773}
+  m_Center: {x: -1.3661263, y: 0.025677646, z: 0.053986467}
 --- !u!1 &5844752057767089038
 GameObject:
   m_ObjectHideFlags: 0
