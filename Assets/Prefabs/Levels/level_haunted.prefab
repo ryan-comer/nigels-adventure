@@ -782,6 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zValueToSendStageCreateCommand: 30
   lightIntensity: 0
+  targetSpeed: 11
   skybox: {fileID: 2100000, guid: 2039a0ad0a9d05549928b70362f54902, type: 2}
   stageID: haunted
 --- !u!65 &6733661271338118545
@@ -792,7 +793,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3315840915725869004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 9.922239, y: 3.6106262, z: 38.644028}

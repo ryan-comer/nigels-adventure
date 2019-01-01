@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zValueToSendStageCreateCommand: 30
   lightIntensity: 0.5
+  targetSpeed: 9
   skybox: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
   stageID: snowy
 --- !u!65 &82175061243237331
@@ -109,7 +110,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152218982096808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 9.922239, y: 3.6106262, z: 38.644028}

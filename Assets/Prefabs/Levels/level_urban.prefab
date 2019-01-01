@@ -66,7 +66,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173282310035858}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 9.922239, y: 3.6106262, z: 38.644028}
@@ -110,7 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zValueToSendStageCreateCommand: 30
   lightIntensity: 1
-  skybox: {fileID: 2100000, guid: d9dca9ae1786c394f9e79c637aa9a7bf, type: 2}
+  targetSpeed: 8
+  skybox: {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
   stageID: urban
 --- !u!1 &1315775186141990
 GameObject:

@@ -32,6 +32,9 @@ public class StageController : MonoBehaviour {
 		// Initial skybox
 		changeSkybox(stages[currentStageIndex].skybox);
 
+		// Starting speed
+		GameController.instance.targetSpeed = stages[currentStageIndex].targetSpeed;
+
 		StartCoroutine(switchStages());
 	}
 	
@@ -46,8 +49,11 @@ public class StageController : MonoBehaviour {
 			yield return new WaitForSeconds(switchingTime);
 
 			currentStageIndex = (currentStageIndex + 1) % stages.Length;	// Go to the next stage
+
+			// Update stuff for this stage
 			changeSkybox(stages[currentStageIndex].skybox);
 			StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
+			GameController.instance.targetSpeed = stages[currentStageIndex].targetSpeed;
 		}
 	}
 
