@@ -6,20 +6,26 @@ ModelImporter:
     100000: //RootNode
     100002: floor
     100004: mounds
+    100006: column
     400000: //RootNode
     400002: floor
     400004: mounds
+    400006: column
     2100000: unnamed
     2100002: Material__ground_diffuse
     2100004: None__mound_diffuse
+    2100006: None__column_diffuse
     2300000: //RootNode
     2300002: floor
     2300004: mounds
+    2300006: column
     3300000: //RootNode
     3300002: floor
     3300004: mounds
+    3300006: column
     4300000: floor
     4300002: mounds
+    4300004: column
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

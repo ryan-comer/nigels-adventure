@@ -90,9 +90,6 @@ public class StageController : MonoBehaviour {
 
 			Vector3 oldVector = new Vector3(oldX, oldY, oldZ);
 
-			Debug.Log("Old Vector: " + oldVector.ToString());
-			Debug.Log("New Vector: " + newVector.ToString());
-
 			Vector3 lerpedVector = Vector3.Lerp(oldVector, newVector, lightDirectionChangeSpeed * Time.deltaTime);
 			Vector3 wrappedVector = new Vector3(UnwrapAngle(lerpedVector.x), UnwrapAngle(lerpedVector.y), UnwrapAngle(lerpedVector.z));
 
@@ -101,7 +98,6 @@ public class StageController : MonoBehaviour {
 			yield return new WaitForSeconds(0);
 		}
 
-		Debug.Log("Done!");
 	}
 
 	public void SpawnStage(Stage stageThatSentCommand){
