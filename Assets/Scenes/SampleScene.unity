@@ -395,10 +395,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
+  - {fileID: 114198885064001624, guid: 4eef667a13796d443be1744e497cc72c, type: 3}
+  - {fileID: 114543025975328436, guid: 03c6a147448a3ef40b056e9540816ee0, type: 3}
   - {fileID: 1894978668916437594, guid: 25ff9849aa2657c418a0ebccde7f0850, type: 3}
+  - {fileID: 1867705772545541553, guid: 0828f1f08b8aa154b80e3f2d095d6a6c, type: 3}
   mainLight: {fileID: 170076734}
   lightChangingSpeed: 0.022
-  switchingTime: 30
+  switchingTime: 20
   currentStageIndex: 0
 --- !u!1 &215345921
 GameObject:
