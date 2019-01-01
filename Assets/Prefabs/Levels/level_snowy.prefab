@@ -100,6 +100,7 @@ MonoBehaviour:
   zValueToSendStageCreateCommand: 30
   lightIntensity: 0.5
   targetSpeed: 9
+  sunRotation: {x: 20, y: 120, z: 0}
   skybox: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
   stageID: snowy
 --- !u!65 &82175061243237331

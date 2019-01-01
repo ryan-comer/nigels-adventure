@@ -10,13 +10,12 @@ public class StageController : MonoBehaviour {
 	public Light mainLight;	 // Main light for the scene
 	[Range(0.0f, 1.0f)]
 	public float lightChangingSpeed;
+	public float lightDirectionChangeSpeed;
 	public int switchingTime;	// How long before switching stages (seconds)
 
 	public int currentStageIndex;
 
 	public static StageController instance;	// Singleton
-
-	private float currentLerpTerm = 0;
 
 	void Awake(){
 		instance = this;	// Assign to singleton
@@ -24,10 +23,13 @@ public class StageController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentStageIndex = 0;
+		currentStageIndex = 0;	// First stage
 
 		// Initial light intensity
 		StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
+
+		// Initial light direction
+		StartCoroutine(changeLightDirection(stages[currentStageIndex].sunRotation));
 
 		// Initial skybox
 		changeSkybox(stages[currentStageIndex].skybox);
@@ -53,6 +55,7 @@ public class StageController : MonoBehaviour {
 			// Update stuff for this stage
 			changeSkybox(stages[currentStageIndex].skybox);
 			StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
+			StartCoroutine(changeLightDirection(stages[currentStageIndex].sunRotation));
 			GameController.instance.targetSpeed = stages[currentStageIndex].targetSpeed;
 		}
 	}
@@ -64,6 +67,41 @@ public class StageController : MonoBehaviour {
 
 			yield return new WaitForSeconds(0);
 		}
+	}
+
+	private IEnumerator changeLightDirection(Vector3 newRotation){
+		float buffer = 1;
+		
+		// Get the old values
+		float oldX = mainLight.transform.rotation.eulerAngles.x;
+		float oldY = mainLight.transform.rotation.eulerAngles.y;
+		float oldZ = mainLight.transform.rotation.eulerAngles.z;
+
+		// Get the new values
+		float newX = newRotation.x;
+		float newY = newRotation.y;
+		float newZ = newRotation.z;
+		Vector3 newVector = new Vector3(newX, newY, newZ);
+
+		while((Mathf.Abs(oldX - newX) > buffer) || (Mathf.Abs(oldY - newY) > buffer) || (Mathf.Abs(oldZ - newZ) > buffer)){
+			oldX = mainLight.transform.rotation.eulerAngles.x;
+			oldY = mainLight.transform.rotation.eulerAngles.y;
+			oldZ = mainLight.transform.rotation.eulerAngles.z;
+
+			Vector3 oldVector = new Vector3(oldX, oldY, oldZ);
+
+			Debug.Log("Old Vector: " + oldVector.ToString());
+			Debug.Log("New Vector: " + newVector.ToString());
+
+			Vector3 lerpedVector = Vector3.Lerp(oldVector, newVector, lightDirectionChangeSpeed * Time.deltaTime);
+			Vector3 wrappedVector = new Vector3(UnwrapAngle(lerpedVector.x), UnwrapAngle(lerpedVector.y), UnwrapAngle(lerpedVector.z));
+
+			mainLight.transform.localEulerAngles = lerpedVector;
+
+			yield return new WaitForSeconds(0);
+		}
+
+		Debug.Log("Done!");
 	}
 
 	public void SpawnStage(Stage stageThatSentCommand){
@@ -89,6 +127,25 @@ public class StageController : MonoBehaviour {
 	// Change the skybox for the level
 	private void changeSkybox(Material newSkybox){
 		RenderSettings.skybox = newSkybox;
+	}
+
+	private static float WrapAngle(float angle)
+	{
+		angle%=360;
+		if(angle >180)
+			return angle - 360;
+
+		return angle;
+	}
+
+	private static float UnwrapAngle(float angle)
+	{
+		if(angle >=0)
+			return angle;
+
+		angle = -angle%360;
+
+		return 360-angle;
 	}
 
 }

@@ -281,6 +281,7 @@ MonoBehaviour:
   zValueToSendStageCreateCommand: 30
   lightIntensity: 1
   targetSpeed: 10
+  sunRotation: {x: 60, y: 120, z: 0}
   skybox: {fileID: 2100000, guid: 72deae4d18418f94688abef8e8483df0, type: 2}
   stageID: desert
 --- !u!65 &605085200749894960

@@ -783,6 +783,7 @@ MonoBehaviour:
   zValueToSendStageCreateCommand: 30
   lightIntensity: 0
   targetSpeed: 11
+  sunRotation: {x: 10, y: 120, z: 0}
   skybox: {fileID: 2100000, guid: 2039a0ad0a9d05549928b70362f54902, type: 2}
   stageID: haunted
 --- !u!65 &6733661271338118545
