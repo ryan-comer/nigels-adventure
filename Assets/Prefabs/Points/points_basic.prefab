@@ -185,6 +185,7 @@ MonoBehaviour:
   - urban
   - snowy
   - haunted
+  - desert
 --- !u!108 &108072196558567942
 Light:
   m_ObjectHideFlags: 0
