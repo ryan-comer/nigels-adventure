@@ -9,6 +9,7 @@ public class SpawnableObject : MonoBehaviour {
 	public  Vector2 spawnableLocation;	// What are the bounds of spawning for this object
 	public float spawnHeight;	// At what height should this be spawned
 	public string[] activeLevels;	// IDs of levels for when this object is active
+	public float spawnYRotation;
 
 	// Use this for initialization
 	void Start () {

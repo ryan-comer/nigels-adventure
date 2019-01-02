@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour {
 	private SpawnableObject powerupToSpawn;	// Spawn this powerups this tick
 	private Dictionary<string, List<SpawnableObject>> spawnableObjectsDict;
 
+	private bool isGameOver = false;
+
 
 	void Awake(){
 		instance = this;
@@ -48,7 +50,6 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_currentSpeed = startingSpeed;
-		targetSpeed = startingSpeed;
 
 		initializeSpawnableObjectsDict();
 
@@ -72,6 +73,11 @@ public class GameController : MonoBehaviour {
 	// Coroutine to periodically create an obstacle
 	private IEnumerator spawnObjects(){
 		while(true){
+			// Gameover - stop spawning
+			if(isGameOver){
+				break;
+			}
+
 			if(powerupToSpawn != null){
 				GameObject.Instantiate(powerupToSpawn, getObjectSpawnLocation(powerupToSpawn), Quaternion.identity);
 				powerupToSpawn = null;
@@ -79,7 +85,7 @@ public class GameController : MonoBehaviour {
 				// Create the obstacle
 				SpawnableObject spawnableObject = getRandomObject();
 				var obj = GameObject.Instantiate(spawnableObject, getObjectSpawnLocation(spawnableObject), Quaternion.identity);
-				obj.transform.Rotate(Vector3.up, 180);	// Turn the object around
+				obj.transform.Rotate(Vector3.up, spawnableObject.spawnYRotation);	// Turn the object around
 			}
 
 			yield return new WaitForSeconds(obstacleSpawnRate);

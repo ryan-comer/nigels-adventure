@@ -91,7 +91,6 @@ public class StageController : MonoBehaviour {
 			Vector3 oldVector = new Vector3(oldX, oldY, oldZ);
 
 			Vector3 lerpedVector = Vector3.Lerp(oldVector, newVector, lightDirectionChangeSpeed * Time.deltaTime);
-			Vector3 wrappedVector = new Vector3(UnwrapAngle(lerpedVector.x), UnwrapAngle(lerpedVector.y), UnwrapAngle(lerpedVector.z));
 
 			mainLight.transform.localEulerAngles = lerpedVector;
 
@@ -123,25 +122,6 @@ public class StageController : MonoBehaviour {
 	// Change the skybox for the level
 	private void changeSkybox(Material newSkybox){
 		RenderSettings.skybox = newSkybox;
-	}
-
-	private static float WrapAngle(float angle)
-	{
-		angle%=360;
-		if(angle >180)
-			return angle - 360;
-
-		return angle;
-	}
-
-	private static float UnwrapAngle(float angle)
-	{
-		if(angle >=0)
-			return angle;
-
-		angle = -angle%360;
-
-		return 360-angle;
 	}
 
 }

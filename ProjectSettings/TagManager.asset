@@ -10,6 +10,7 @@ TagManager:
   - powerup
   - nigel
   - points
+  - points_bonus
   layers:
   - Default
   - TransparentFX
