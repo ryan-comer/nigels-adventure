@@ -1606,6 +1606,7 @@ MonoBehaviour:
   - {fileID: 6748009490748964806, guid: 7d90138ad4f2e7046863b7483736ac45, type: 3}
   - {fileID: 1880764717155754994, guid: adcbbf0066ff0104f9812cc49a6e86d4, type: 3}
   - {fileID: 2436462766990184849, guid: 4ca24a62b1fdfcc4896fc8f700d6efc9, type: 3}
+  - {fileID: 17610610424963602, guid: 91dbe549d3625324c8bd9f16b640f0c1, type: 3}
   obstacleSpawnRate: 1.3
   spawnObjectsEnabled: 1
   startingSpeed: 7

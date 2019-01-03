@@ -65,7 +65,7 @@ public class Lizzy : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		// Check if Nigel
-		if(collider.gameObject.GetComponent<Nigel>() != null){
+		if(collider.tag == "nigel"){
 			GameController.instance.GameOver();
 		}
 	}
