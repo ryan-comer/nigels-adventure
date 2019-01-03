@@ -17,7 +17,7 @@ public class PointsOnCollision : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.GetComponent<Nigel>() != null){
+		if(collider.tag == "nigel"){
 			PointsController.instance.AddPoints(pointsToAdd);
 		}
 	}

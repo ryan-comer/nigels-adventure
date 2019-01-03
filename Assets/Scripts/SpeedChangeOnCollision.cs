@@ -18,9 +18,9 @@ public class SpeedChangeOnCollision : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider collider){
-		if(collider.gameObject.GetComponent<Nigel>() != null){
+		if(collider.gameObject.tag == "nigel"){
 			// Check for catnip
-			if(collider.gameObject.GetComponent<Nigel>().isCatnipOn){
+			if(GameController.instance.nigel.isCatnipOn){
 				return;
 			}
 

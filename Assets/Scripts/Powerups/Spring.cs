@@ -26,7 +26,7 @@ public class Spring : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		// Hit Nigel - do the powerup
-		if(collider.gameObject.GetComponent<Nigel>() != null){
+		if(collider.tag == "nigel"){
 			Nigel nigel = GameController.instance.nigel;
 			
 			nigel.doubleJump = true;

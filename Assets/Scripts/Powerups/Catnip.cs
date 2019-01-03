@@ -26,8 +26,8 @@ public class Catnip : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		// Hit Nigel - do the powerup
-		if(collider.gameObject.GetComponent<Nigel>() != null){
-			Nigel nigel = collider.gameObject.GetComponent<Nigel>();
+		if(collider.tag == "nigel"){
+			Nigel nigel = GameController.instance.nigel;
 			nigel.isCatnipOn = true;
 			nigel.horizontalSpeed = boostHorizontalSpeed;
 

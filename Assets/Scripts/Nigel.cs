@@ -55,9 +55,9 @@ public class Nigel : MonoBehaviour {
 			jump();
 		}
 		
-		if(jumping == 0){
+		//if(jumping == 0){
 			moveNigel(moveX);
-		}
+		//}
 
 		handlePhysics();
 	}
