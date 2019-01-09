@@ -382,7 +382,7 @@ MonoBehaviour:
   spawnHeight: 0
   activeLevels:
   - desert
-  spawnYRotation: 0
+  spawnYRotation: 180
 --- !u!114 &17610610424966625
 MonoBehaviour:
   m_ObjectHideFlags: 0

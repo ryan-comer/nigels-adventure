@@ -105,6 +105,7 @@ MonoBehaviour:
   spawnHeight: 0
   activeLevels:
   - haunted
+  spawnYRotation: 180
 --- !u!114 &2790257584802846006
 MonoBehaviour:
   m_ObjectHideFlags: 0

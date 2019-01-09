@@ -188,3 +188,4 @@ MonoBehaviour:
   spawnHeight: 0
   activeLevels:
   - haunted
+  spawnYRotation: 180

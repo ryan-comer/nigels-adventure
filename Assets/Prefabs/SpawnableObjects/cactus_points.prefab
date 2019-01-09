@@ -385,7 +385,7 @@ MonoBehaviour:
   spawnHeight: 0
   activeLevels:
   - desert
-  spawnYRotation: 0
+  spawnYRotation: 180
 --- !u!65 &4967332753712281943
 BoxCollider:
   m_ObjectHideFlags: 0
