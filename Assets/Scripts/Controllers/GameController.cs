@@ -140,11 +140,16 @@ public class GameController : MonoBehaviour {
 		lizzy.GetComponent<Lizzy>().ChangeDistance(distanceChange);
 	}
 
+    // Function called when it's game over
 	public void GameOver(){
 		UIController.instance.ShowGameOver();
+
 		targetSpeed = 0;
 		m_currentSpeed = 0;
 		onSpeedChanged(0);
+
+        lizzy.GetComponent<Animator>().SetTrigger("idle");  // Idle animation for lizzy
+        nigel.GetComponent<Animator>().SetTrigger("idle");  // Idle animation for nigel
 	}
 
 	// Go towards the target speed
