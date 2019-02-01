@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+    public Camera cam;
+
 	public Nigel nigel;
 	public Lizzy lizzy;
 
@@ -54,8 +56,6 @@ public class GameController : MonoBehaviour {
 		initializeSpawnableObjectsDict();
 
 		initializeSlider();
-
-		StartCoroutine(spawnObjects());
 	}
 	
 	// Update is called once per frame
@@ -63,6 +63,16 @@ public class GameController : MonoBehaviour {
 		equalizeSpeed();
 		updateSlider();
 	}
+
+    // Start the game
+    public void GameStart()
+    {
+        lizzy.GameStart();
+        StartCoroutine(spawnObjects());
+
+        // Move the main camera
+        cam.GetComponent<MoveToLocation>().Move();
+    }
 
 	// Called by the powerupController
 	// Tells the game controller to spawn the powerup soon
@@ -163,7 +173,8 @@ public class GameController : MonoBehaviour {
 		Vector3 diff = lizzy.transform.position - nigel.transform.position;
 		float distance = diff.magnitude;
 		distance = Mathf.Abs(distance);
-
+        
+        // Set the slider distance
 		sliderStartingDistance = distance;
 		UIController.instance.ChangeLizzyDistanceSlider(0);
 	}

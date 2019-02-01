@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour {
 	public Text multiplierText;
 	public Slider distanceSlider;
 	public RectTransform powerupsGroup;	// Group for active powerups to go
+    public Button startGameButton;  // Button to start the game
 
 	public RectTransform powerupUI_p;
 
@@ -42,6 +43,20 @@ public class UIController : MonoBehaviour {
 	public void ChangeLizzyDistanceSlider(float newValue){
 		distanceSlider.value = newValue;
 	}
+
+    // Start the game
+    public void StartGame()
+    {
+        GameController.instance.GameStart();
+
+        // Hide the button
+        startGameButton.gameObject.SetActive(false);
+
+        // Show the rest of the UI
+        scoreText.gameObject.SetActive(true);
+        multiplierText.gameObject.SetActive(true);
+        distanceSlider.gameObject.SetActive(true);
+    }
 
 	public void ShowGameOver(){
 		gameOverText.gameObject.SetActive(true);

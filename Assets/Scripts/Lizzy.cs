@@ -12,10 +12,11 @@ public class Lizzy : MonoBehaviour {
 	public float xChangeRate = 0.1f;
 
 	public float targetDistance;
+    public float startingDistance;
 
 	// Use this for initialization
 	void Start () {
-		targetDistance = getDistanceFromNigel(transform.position);
+        targetDistance = getDistanceFromNigel(transform.position);
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,12 @@ public class Lizzy : MonoBehaviour {
 		moveTowardsNigelX();
 		moveTowardsTargetDistance();
 	}
+
+    // Start the game for Lizzy
+    public void GameStart()
+    {
+        targetDistance = startingDistance;  // Set the starting speed
+    }
 	
 	// Change the target distance
 	public void ChangeDistance(float amountToChange){
