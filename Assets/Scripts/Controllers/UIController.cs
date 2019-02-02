@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
 	// UI Components
-	public Text gameOverText;
+	public Image gameOverText;
 	public Text scoreText;
 	public Text multiplierText;
 	public Slider distanceSlider;
