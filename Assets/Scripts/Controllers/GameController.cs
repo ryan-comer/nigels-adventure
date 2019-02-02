@@ -72,6 +72,9 @@ public class GameController : MonoBehaviour {
 
         // Move the main camera
         cam.GetComponent<MoveToLocation>().Move();
+
+        // Start spawning powerups
+        PowerupController.instance.GameStart();
     }
 
 	// Called by the powerupController
@@ -168,14 +171,9 @@ public class GameController : MonoBehaviour {
 		onSpeedChanged(m_currentSpeed);
 	}
 
-	private void initializeSlider(){
-		// Get the minimum value for the slider
-		Vector3 diff = lizzy.transform.position - nigel.transform.position;
-		float distance = diff.magnitude;
-		distance = Mathf.Abs(distance);
-        
+	private void initializeSlider(){        
         // Set the slider distance
-		sliderStartingDistance = distance;
+		sliderStartingDistance = lizzy.startingDistance;
 		UIController.instance.ChangeLizzyDistanceSlider(0);
 	}
 

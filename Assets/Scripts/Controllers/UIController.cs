@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour {
 	public Slider distanceSlider;
 	public RectTransform powerupsGroup;	// Group for active powerups to go
     public Button startGameButton;  // Button to start the game
+    public Image titleImage;    // The title of the game
+    public RectTransform gameInfoBackground; // Background for game info
 
 	public RectTransform powerupUI_p;
 
@@ -24,7 +26,6 @@ public class UIController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameOverText.gameObject.SetActive(false);
-		
 	}
 	
 	// Update is called once per frame
@@ -49,13 +50,15 @@ public class UIController : MonoBehaviour {
     {
         GameController.instance.GameStart();
 
-        // Hide the button
+        // Hide stuff
         startGameButton.gameObject.SetActive(false);
+        titleImage.gameObject.SetActive(false);
 
         // Show the rest of the UI
         scoreText.gameObject.SetActive(true);
         multiplierText.gameObject.SetActive(true);
         distanceSlider.gameObject.SetActive(true);
+        gameInfoBackground.gameObject.SetActive(true);
     }
 
 	public void ShowGameOver(){

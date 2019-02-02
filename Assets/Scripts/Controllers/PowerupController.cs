@@ -19,16 +19,17 @@ public class PowerupController : MonoBehaviour {
 	void Awake(){
 		instance = this;
 	}
-
-	// Use this for initialization
-	void Start () {
-		StartCoroutine(spawnPowerup());
-	}
 	
 	// Update is called once per frame
 	void Update () {
 		tickTimers();
 	}
+
+    // Called when the game starts
+    public void GameStart()
+    {
+        StartCoroutine(spawnPowerup());
+    }
 
 	// Register a new powerup with the controller
 	// The player just go this powerup
