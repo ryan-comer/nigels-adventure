@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 	public Lizzy lizzy;
 
 	public SpawnableObject[] spawnableObjects;
+    public GameObject house;    // The house to put at the end
 
 	public float obstacleSpawnRate = 1;
 
@@ -75,6 +76,15 @@ public class GameController : MonoBehaviour {
 
         // Start spawning powerups
         PowerupController.instance.GameStart();
+
+        // Start switching stages
+        StageController.instance.GameStart();
+    }
+
+    // The game was won!
+    public void GameWin()
+    {
+        GameOver();
     }
 
 	// Called by the powerupController

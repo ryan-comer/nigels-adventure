@@ -14,6 +14,7 @@ public class StageController : MonoBehaviour {
 	public int switchingTime;	// How long before switching stages (seconds)
 
 	public int currentStageIndex;
+    public Transform houseSpawnPosition;    // Where the house is spawned
 
 	public static StageController instance;	// Singleton
 
@@ -36,21 +37,29 @@ public class StageController : MonoBehaviour {
 
 		// Starting speed
 		GameController.instance.targetSpeed = stages[currentStageIndex].targetSpeed;
+	}
 
-		StartCoroutine(switchStages());
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Called when the game starts
+    public void GameStart()
+    {
+        StartCoroutine(switchStages());
+    }
 
 	// Go to the next stage type
 	private IEnumerator switchStages(){
 		while(true){
 			yield return new WaitForSeconds(switchingTime);
 
-			currentStageIndex = (currentStageIndex + 1) % stages.Length;	// Go to the next stage
+            // Finished last stage
+            if (currentStageIndex + 1 == stages.Length)
+            {
+                // Spawn the house
+                var obj = Instantiate(GameController.instance.house, houseSpawnPosition.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                obj.transform.position = new Vector3(obj.transform.position.x, 0, obj.transform.position.z);
+                break;
+            }
+
+            currentStageIndex += 1;
 
 			// Update stuff for this stage
 			changeSkybox(stages[currentStageIndex].skybox);
