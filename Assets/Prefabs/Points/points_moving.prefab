@@ -188,6 +188,7 @@ MonoBehaviour:
   - snowy
   - haunted
   - desert
+  spawnYRotation: 0
 --- !u!114 &114878941324103074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +214,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.71657264, b: 0, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.6
   m_Range: 3.69
   m_SpotAngle: 30
   m_CookieSize: 10
