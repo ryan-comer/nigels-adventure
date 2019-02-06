@@ -101,6 +101,7 @@ MonoBehaviour:
   sunRotation: {x: 30, y: 180, z: 0}
   skybox: {fileID: 2100000, guid: 72deae4d18418f94688abef8e8483df0, type: 2}
   stageID: desert
+  audioClip: {fileID: 8300000, guid: c4401888a2a754e48bbf9ba551610690, type: 3}
 --- !u!65 &319985757
 BoxCollider:
   m_ObjectHideFlags: 0

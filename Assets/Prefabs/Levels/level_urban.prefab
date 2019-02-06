@@ -114,6 +114,7 @@ MonoBehaviour:
   sunRotation: {x: 50, y: 120, z: 0}
   skybox: {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
   stageID: urban
+  audioClip: {fileID: 8300000, guid: 8759ed4edd788a449990d25ab667f6c9, type: 3}
 --- !u!1 &1315775186141990
 GameObject:
   m_ObjectHideFlags: 0

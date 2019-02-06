@@ -103,6 +103,7 @@ MonoBehaviour:
   sunRotation: {x: 20, y: 120, z: 0}
   skybox: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
   stageID: snowy
+  audioClip: {fileID: 8300000, guid: 44a0b9127f4996e46a1c970b5e7a360f, type: 3}
 --- !u!65 &82175061243237331
 BoxCollider:
   m_ObjectHideFlags: 0

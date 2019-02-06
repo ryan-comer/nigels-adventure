@@ -10,16 +10,17 @@ public class Stage : MonoBehaviour {
 	public Vector3 sunRotation;	// Orientation of the sun
 	public Material skybox;	// The skybox for this stage
 	public string stageID;
+    public AudioClip audioClip; // The song for this stage
 
 	private bool alreadySpawned = false;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		checkStageSpawn();
 	}
 
