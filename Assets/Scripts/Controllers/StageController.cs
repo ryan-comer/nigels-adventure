@@ -36,25 +36,16 @@ public class StageController : MonoBehaviour {
 		changeSkybox(stages[currentStageIndex].skybox);
 
 		// Starting speed
-		GameController.instance.targetSpeed = stages[currentStageIndex].targetSpeed;
+		GameController.instance.SetTargetSpeed(stages[currentStageIndex].targetSpeed);
 
         // Starting song
-        playSong(stages[currentStageIndex]);
+        AudioController.instance.PlayBackgroundMusic(stages[currentStageIndex].audioClip);
 	}
 
     // Called when the game starts
     public void GameStart()
     {
         StartCoroutine(switchStages());
-    }
-
-    // Start playing the song for this level
-    private void playSong(Stage stage)
-    {
-        AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
-
-        audioSource.clip = stage.audioClip;   // Set the clip
-        audioSource.Play(); // Play the clip
     }
 
     // Go to the next stage type
@@ -75,10 +66,10 @@ public class StageController : MonoBehaviour {
 
 			// Update stuff for this stage
 			changeSkybox(stages[currentStageIndex].skybox);
-            playSong(stages[currentStageIndex]);
-			StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
+            AudioController.instance.PlayBackgroundMusic(stages[currentStageIndex].audioClip);
+            StartCoroutine(changeLightIntensity(stages[currentStageIndex].lightIntensity));
 			StartCoroutine(changeLightDirection(stages[currentStageIndex].sunRotation));
-			GameController.instance.targetSpeed = stages[currentStageIndex].targetSpeed;
+			GameController.instance.SetTargetSpeed(stages[currentStageIndex].targetSpeed);
 		}
 	}
 

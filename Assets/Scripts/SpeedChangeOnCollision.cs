@@ -24,8 +24,8 @@ public class SpeedChangeOnCollision : MonoBehaviour {
 				return;
 			}
 
-			GameController.instance.AddSpeed(speedToAdd);
-			GameController.instance.AddLizzyDistance(lizzyDistanceChange);
+			GameController.instance.AddSpeed(speedToAdd * (GameController.instance.difficultyFactor + 1.0f));
+			GameController.instance.AddLizzyDistance(lizzyDistanceChange * ((GameController.instance.difficultyFactor+1)/2));
 		}
 	}
 

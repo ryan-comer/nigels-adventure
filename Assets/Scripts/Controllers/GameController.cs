@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour {
 	public bool spawnObjectsEnabled;	// Turn off for debugging
 
 	// Speed stuff for Nigel
-	public float startingSpeed = 5.0f;
 	public float targetSpeed;	// The speed at which to equalize to
 	[Range(0, 1)]
 	public float speedEqualizeFactor;	// How fast to equalize to the target speed
@@ -37,6 +36,8 @@ public class GameController : MonoBehaviour {
 
 	public static GameController instance;	// Singleton
 
+    public float difficultyFactor = 0.0f;
+
 	private float m_currentSpeed;
 	
 	private float sliderStartingDistance;	// Distance that Lizzy starts from Nigel (this is slider value 0)
@@ -45,6 +46,9 @@ public class GameController : MonoBehaviour {
 
 	private bool isGameOver = false;
 
+    private float lastSpeedSet; // The last speed that was set
+    private float lastObstacleSpawnRate;    // The last value that the obstacle spawn rate was set to
+
 
 	void Awake(){
 		instance = this;
@@ -52,17 +56,19 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		m_currentSpeed = startingSpeed;
-
 		initializeSpawnableObjectsDict();
 
 		initializeSlider();
+        lastObstacleSpawnRate = obstacleSpawnRate;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		equalizeSpeed();
-		updateSlider();
+        if (!isGameOver)
+        {
+            equalizeSpeed();
+            updateSlider();
+        }
 	}
 
     // Start the game
@@ -92,9 +98,62 @@ public class GameController : MonoBehaviour {
 	public void SpawnPowerup(SpawnableObject powerup){
 		powerupToSpawn = powerup;
 	}
-	
-	// Coroutine to periodically create an obstacle
-	private IEnumerator spawnObjects(){
+
+    public void AddSpeed(float speed)
+    {
+        SetSpeed(m_currentSpeed + speed);
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        m_currentSpeed = newSpeed;
+        if (m_currentSpeed < 0)
+        {
+            m_currentSpeed = 0;
+        }
+    }
+
+    public void SetTargetSpeed(float newTargetSpeed)
+    {
+        lastSpeedSet = newTargetSpeed;
+        newTargetSpeed *= (difficultyFactor + 1);
+
+        if(newTargetSpeed < 0)
+        {
+            newTargetSpeed = 0;
+        }
+
+        targetSpeed = newTargetSpeed;
+    }
+
+    public void AddLizzyDistance(float distanceChange)
+    {
+        lizzy.GetComponent<Lizzy>().ChangeDistance(distanceChange);
+    }
+
+    // Function called when it's game over
+    public void GameOver()
+    {
+        UIController.instance.ShowGameOver();
+
+        targetSpeed = 0;
+        m_currentSpeed = 0;
+        onSpeedChanged(0);
+
+        lizzy.GetComponent<Animator>().SetTrigger("idle");  // Idle animation for lizzy
+        nigel.GetComponent<Animator>().SetTrigger("idle");  // Idle animation for nigel
+    }
+
+    // Called from UI to change the difficulty
+    public void ChangeDifficultyFromUI()
+    {
+        difficultyFactor = UIController.instance.difficultySlider.value;
+        targetSpeed = lastSpeedSet * (difficultyFactor + 1.0f);
+        obstacleSpawnRate = lastObstacleSpawnRate - difficultyFactor / 2;
+    }
+
+    // Coroutine to periodically create an obstacle
+    private IEnumerator spawnObjects(){
 		while(true){
 			// Gameover - stop spawning
 			if(isGameOver){
@@ -146,33 +205,6 @@ public class GameController : MonoBehaviour {
 	// Get the spawn location for the obstacle
 	private Vector3 getObjectSpawnLocation(SpawnableObject spawnableObject){
 		return new Vector3(Random.Range(spawnableObject.spawnableLocation.x, spawnableObject.spawnableLocation.y), spawnableObject.spawnHeight, spawnLocation.position.z);
-	}
-
-	public void AddSpeed(float speed){
-		SetSpeed(m_currentSpeed + speed);
-	}
-
-	public void SetSpeed(float newSpeed){
-		m_currentSpeed = newSpeed;
-		if(m_currentSpeed < 0){
-			m_currentSpeed = 0;
-		}
-	}
-
-	public void AddLizzyDistance(float distanceChange){
-		lizzy.GetComponent<Lizzy>().ChangeDistance(distanceChange);
-	}
-
-    // Function called when it's game over
-	public void GameOver(){
-		UIController.instance.ShowGameOver();
-
-		targetSpeed = 0;
-		m_currentSpeed = 0;
-		onSpeedChanged(0);
-
-        lizzy.GetComponent<Animator>().SetTrigger("idle");  // Idle animation for lizzy
-        nigel.GetComponent<Animator>().SetTrigger("idle");  // Idle animation for nigel
 	}
 
 	// Go towards the target speed

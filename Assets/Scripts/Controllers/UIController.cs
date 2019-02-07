@@ -14,6 +14,9 @@ public class UIController : MonoBehaviour {
     public Button startGameButton;  // Button to start the game
     public Image titleImage;    // The title of the game
     public RectTransform gameInfoBackground; // Background for game info
+    public RectTransform pauseScreen;   // The pause menu
+    public Slider musicVolumeSlider;    // The slider for music volume
+    public Slider difficultySlider; // The slider for difficulty
 
 	public RectTransform powerupUI_p;
 
@@ -30,7 +33,7 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        checkInput();
 	}
 
 	public void ChangeScoreText(int newScore){
@@ -87,5 +90,31 @@ public class UIController : MonoBehaviour {
 			}
 		}
 	}
+
+    // Turn the pause screen on/off
+    public void TogglePauseScreen()
+    {
+        pauseScreen.gameObject.SetActive(!pauseScreen.gameObject.activeSelf);
+
+        // Pause the game
+        if (pauseScreen.gameObject.activeSelf)
+        {
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    // Handle input
+    private void checkInput()
+    {
+        // Pause screen
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseScreen();
+        }
+    }
 
 }
