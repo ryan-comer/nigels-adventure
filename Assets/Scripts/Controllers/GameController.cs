@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -150,6 +151,19 @@ public class GameController : MonoBehaviour {
         difficultyFactor = UIController.instance.difficultySlider.value;
         targetSpeed = lastSpeedSet * (difficultyFactor + 1.0f);
         obstacleSpawnRate = lastObstacleSpawnRate - difficultyFactor / 2;
+    }
+
+    // Exit the game
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    // Restart the game
+    public void RestartGame()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(0);
     }
 
     // Coroutine to periodically create an obstacle
