@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour {
 
 	// UI Components
 	public Image gameOverText;
+    public Image victoryText;
 	public Text scoreText;
 	public Text multiplierText;
 	public Slider distanceSlider;
@@ -67,6 +68,11 @@ public class UIController : MonoBehaviour {
 	public void ShowGameOver(){
 		gameOverText.gameObject.SetActive(true);
 	}
+
+    public void ShowVictory()
+    {
+        victoryText.gameObject.SetActive(true);
+    }
 
 	// Create a powerup icon and timer
 	public void CreatePowerupUI(Powerup powerup){

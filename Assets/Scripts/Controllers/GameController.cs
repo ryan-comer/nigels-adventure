@@ -91,7 +91,9 @@ public class GameController : MonoBehaviour {
     // The game was won!
     public void GameWin()
     {
-        GameOver();
+        UIController.instance.ShowVictory();
+
+        StopGame();
     }
 
 	// Called by the powerupController
@@ -137,6 +139,11 @@ public class GameController : MonoBehaviour {
     {
         UIController.instance.ShowGameOver();
 
+        StopGame();
+    }
+
+    public void StopGame()
+    {
         targetSpeed = 0;
         m_currentSpeed = 0;
         onSpeedChanged(0);
