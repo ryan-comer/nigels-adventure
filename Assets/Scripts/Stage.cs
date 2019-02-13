@@ -12,7 +12,9 @@ public class Stage : MonoBehaviour {
 	public string stageID;
     public AudioClip audioClip; // The song for this stage
 
-	private bool alreadySpawned = false;
+    public bool isPoolActive;   // Is active in pool
+
+	public bool alreadySpawned = false;
 
 	// Use this for initialization
 	void Start () {

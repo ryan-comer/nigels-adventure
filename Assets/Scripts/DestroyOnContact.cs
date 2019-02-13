@@ -22,6 +22,14 @@ public class DestroyOnContact : MonoBehaviour {
 		// Check if the tag is in the list of tags to destroy
 		foreach(string destroyTag in tagsToDestroy){
 			if(destroyTag == tag){
+                // Special case for stages
+                if(tag == "stage")
+                {
+                    collider.gameObject.GetComponent<Stage>().isPoolActive = true;  // Put back into the pool
+                    collider.gameObject.SetActive(false);
+                    return;
+                }
+
 				Destroy(collider.transform.root.gameObject);
 			}
 		}
