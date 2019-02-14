@@ -592,7 +592,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 0.9999977}
   m_Children: []
   m_Father: {fileID: 2095499604}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -770,7 +770,7 @@ RectTransform:
   - {fileID: 1053062768}
   - {fileID: 1354964845}
   m_Father: {fileID: 2095499604}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -826,6 +826,7 @@ GameObject:
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
+  - component: {fileID: 534669908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -872,7 +873,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -1009,6 +1010,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &534669908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 411dc1cd68c50e846a8f2a561288f87f, type: 2}
 --- !u!1 &552375064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,7 +3304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1e64d8e41483a46bc483b3eb73eada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupSpawnRate: 20
+  powerupSpawnRate: 30
   powerups:
   - {fileID: 114092509533208228, guid: d338a608da248ea46b747e2271f460ed, type: 3}
   - {fileID: 114504711326139926, guid: 817c082ea3401904d81db3a58b7a173d, type: 3}
@@ -3439,6 +3453,12 @@ MonoBehaviour:
   - {fileID: 1880764717155754994, guid: adcbbf0066ff0104f9812cc49a6e86d4, type: 3}
   - {fileID: 2436462766990184849, guid: 4ca24a62b1fdfcc4896fc8f700d6efc9, type: 3}
   - {fileID: 17610610424963602, guid: 91dbe549d3625324c8bd9f16b640f0c1, type: 3}
+  - {fileID: 17610610424963602, guid: 9bdc7936de9e5734b8c918198df72128, type: 3}
+  - {fileID: 114601428384562828, guid: eed0b95faa1eb0244b3d4fc60b9dc689, type: 3}
+  - {fileID: 114231570289751652, guid: 38ed1f015bf548644b16d77bc060b54e, type: 3}
+  - {fileID: 114097667950502320, guid: 9167f415bcec8074b8202d46e27f8fc2, type: 3}
+  - {fileID: 1660766039, guid: 96c0ecf16f2d5884783cc5b1857d2acb, type: 3}
+  - {fileID: 5433265855630614231, guid: f15d30122d5fce74d86ade2a541c9318, type: 3}
   house: {fileID: 6159938519710700981, guid: 9d0aa73caf1496b469cd2f175e86bed4, type: 3}
   obstacleSpawnRate: 1.5
   spawnObjectsEnabled: 1
@@ -3899,8 +3919,8 @@ RectTransform:
   - {fileID: 1821904730}
   - {fileID: 5204562}
   - {fileID: 964019803}
-  - {fileID: 371468214}
   - {fileID: 234784279}
+  - {fileID: 371468214}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -196,4 +196,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupImage: {fileID: 21300000, guid: 94b5e2fc43aad134e83e404f581b7205, type: 3}
   powerupID: catnip
-  duration: 20
+  duration: 15
